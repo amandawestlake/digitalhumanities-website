@@ -13,6 +13,7 @@ September 10, 2021
 
 This program takes in large texts (in this case, the Wealth of Nations and the Decline and Fall of the Roman Empire) and prints out a list of the most common words present in the texts in order to compare their content.
 
+```
 
 def readFile(fileName):
   #print(fileName)
@@ -88,3 +89,5 @@ printWords(wordsWealth, indexWealth)
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/
+
+```
