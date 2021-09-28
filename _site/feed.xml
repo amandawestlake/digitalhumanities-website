@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="localhost:4000/digitalhumanities-website/feed.xml" rel="self" type="application/atom+xml" /><link href="localhost:4000/digitalhumanities-website/" rel="alternate" type="text/html" /><updated>2021-09-28T03:21:51-04:00</updated><id>localhost:4000/digitalhumanities-website/feed.xml</id><title type="html">Amanda Westlake - Digital Humanities</title><subtitle>This website contains coursework for the Fall 2021 Digital Humanities course at Tufts University.</subtitle><entry><title type="html">Assignment 1: Word Frequencies in Gibbons and Wealth of Nations</title><link href="localhost:4000/digitalhumanities-website/jekyll/update/2021/09/20/assignment-one.html" rel="alternate" type="text/html" title="Assignment 1: Word Frequencies in Gibbons and Wealth of Nations" /><published>2021-09-20T10:00:00-04:00</published><updated>2021-09-20T10:00:00-04:00</updated><id>localhost:4000/digitalhumanities-website/jekyll/update/2021/09/20/assignment-one</id><content type="html" xml:base="localhost:4000/digitalhumanities-website/jekyll/update/2021/09/20/assignment-one.html">&lt;p&gt;Amanda Westlake&lt;/p&gt;
+
+&lt;p&gt;Digital Humanities&lt;/p&gt;
+
+&lt;p&gt;September 10, 2021&lt;/p&gt;
+
+&lt;p&gt;This program takes in large texts (in this case, the Wealth of Nations and the Decline and Fall of the Roman Empire) and prints out a list of the most common words present in the texts in order to compare their content.&lt;/p&gt;
+
+&lt;p&gt;def readFile(fileName):
+  #print(fileName)
+  file = open(fileName, ‘r’) # open file&lt;/p&gt;
+
+&lt;p&gt;index = {}
+  for line in file:
+    line = file.readline() #save line into string line
+    words = line.split() #split line into list of words&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for word in words:
+  if (word != '\n') and (word!= &quot;&quot;):
+    if word in index:
+      index[word] += 1 #increment
+      num = index[word]
+    else:
+      index[word] = 1   file.close()   return index
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;def readFileCapitals(fileName):
+  #print(fileName)
+  file = open(fileName, ‘r’) # open file&lt;/p&gt;
+
+&lt;p&gt;index = {}
+  for line in file:
+    line = file.readline() #save line into string line
+    words = line.split() #split line into list of words&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for word in words:
+  if (word != '\n') and (word!= &quot;&quot;) and word[0].isupper():
+    if word in index:
+      index[word] += 1 #increment
+      num = index[word]
+    else:
+      index[word] = 1   file.close()   return index
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;def sortWords(dictionary):
+  wordList = sorted(dictionary, key=dictionary.get, reverse=True)
+  return wordList&lt;/p&gt;
+
+&lt;p&gt;def printWords(wordList, dictionary):
+  i = 0
+  for word in wordList:
+    print(i, “.) “, word, “ appears: “, dictionary[word], “ times”, “\n”)
+    i += 1&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Uncomment this code to create a top 50 list (or change to any number)
+# if not limited, the number of words makes it difficult to read
+if i == 150:
+  break
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;run-program-here---prints-list-of-all-words-in-descending-order&quot;&gt;Run program here - prints list of all words in descending order&lt;/h1&gt;
+
+&lt;p&gt;indexDecline = readFile(“declineandfall-gut.txt”)
+indexWealth = readFile(“wealthofnations-gut.txt”)&lt;/p&gt;
+
+&lt;p&gt;print(“Decline and Fall of the Roman Empire words: \n”)
+wordsDecline = sortWords(indexDecline)
+printWords(wordsDecline, indexDecline)&lt;/p&gt;
+
+&lt;p&gt;print(“Wealth of Nation words: \n”)
+wordsWealth = sortWords(indexWealth)
+printWords(wordsWealth, indexWealth)&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html">Amanda Westlake</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="localhost:4000/digitalhumanities-website/jekyll/update/2021/09/15/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2021-09-15T15:44:50-04:00</published><updated>2021-09-15T15:44:50-04:00</updated><id>localhost:4000/digitalhumanities-website/jekyll/update/2021/09/15/welcome-to-jekyll</id><content type="html" xml:base="localhost:4000/digitalhumanities-website/jekyll/update/2021/09/15/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
